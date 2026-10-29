@@ -1,0 +1,127 @@
+DQUIZZ - Gamified E-Learning Platform - How to Use
+=====================================================
+
+DQuizz is a web application built with PHP + MySQL. It lets lecturers
+create quizzes and modules, students join modules, take quizzes, earn
+coins, buy avatars and challenge friends in 1v1 quizzes. Admins manage
+users, quizzes, modules and view all reports.
+
+
+BEFORE YOU START (one-time setup)
+==================================
+1. Install XAMPP (or any PHP + MySQL stack) on your computer.
+2. Open the XAMPP Control Panel and start:
+         - Apache
+         - MySQL
+3. Create the database:
+   - Open http://localhost/phpmyadmin
+   - Create a database named:   elearning_db
+   - Import / create the tables (users, modules, quizzes, quiz_questions,
+     quiz_results, slots, appointments, feedback, notifications,
+     user_currency, avatars, user_avatars, challenges, challenge_attempts,
+     module_participants, etc.) that the project uses.
+4. Copy the whole "Capstone(Complete)" folder into your XAMPP web root:
+         C:\xampp\htdocs\
+   (so the files live at  C:\xampp\htdocs\Capstone(Complete)\ )
+5. The database connection is already set in db_config.php:
+         host     : localhost
+         db name  : elearning_db
+         user     : root
+         password : (blank)
+   (Change these in db_config.php if your MySQL uses a different password.)
+
+
+STEP 1 - Open the website
+==========================
+1. Make sure Apache and MySQL are running in XAMPP.
+2. Open your browser and go to:
+
+         http://localhost/Capstone(Complete)/index.php
+
+   (The login page for DQuizz will load.)
+
+
+STEP 2 - Register / Log in
+===========================
+Register (students and lecturers):
+   1. On the login page, choose Register.
+   2. Fill in: Name, TP Number, Email, Password, Confirm Password.
+   3. Choose your role: Student or Lecturer.
+   4. Click Register. You will be sent back to the login page.
+
+Log in:
+   1. Enter your Email and Password.
+   2. Click Login. You will be taken to your Dashboard.
+
+   NOTE:
+   - Students and lecturers register themselves on this page.
+   - The ADMIN account is already created directly in the database
+     (role = "admin"). Use the admin email/password given to you.
+   - If login fails, you see "Invalid credentials."
+
+
+STEP 3 - STUDENT DASHBOARD
+===========================
+After logging in as a student you can:
+
+   Join Module        : enter a Module Join Code (given by your lecturer)
+                        to enrol in a module.
+   Your Modules       : click a module to see its quizzes, then click
+                        "Take Quiz" to answer questions (one attempt each).
+   Daily Quiz         : take the daily quiz.
+   1v1 Challenge     : challenge another student to a quiz duel
+                        (see pending / completed challenges on your dashboard).
+   View Scoreboard   : see the leaderboard.
+   Coins / Currency   : you earn coins for correct answers.
+   Avatar Store       : spend coins to buy avatars and set your profile picture.
+   Feedback          : send feedback to the lecturers.
+   Notifications     : see recent notifications and mark them as read.
+   Logout            : top-right button.
+
+
+STEP 4 - LECTURER DASHBOARD
+============================
+After logging in as a lecturer you can:
+
+   Create New Quiz     : build a quiz, add questions and answers.
+   Manage Quizzes      : edit / delete existing quizzes.
+   Manage Modules      : create modules and generate a Join Code to give
+                        to your students.
+   Quiz Performance Reports : see how students performed on each quiz.
+   Student Progress Reports : track each student's progress.
+   Feedback           : view feedback sent by students.
+   Logout             : top-right button.
+
+
+STEP 5 - ADMIN DASHBOARD
+=========================
+After logging in as admin you can:
+
+   Manage Users        : view / edit / delete user accounts.
+   Manage Quizzes      : manage all quizzes on the platform.
+   Manage All Modules  : oversee every module.
+   View Reports        : platform-wide reports.
+   View All Feedback   : read all student feedback.
+   Feedback Reports & Analytics : feedback analytics.
+   Logout              : top-right button.
+
+
+TROUBLESHOOTING
+================
+- "Connection failed" / database error : Start MySQL in XAMPP and make sure
+                                         the database "elearning_db" exists.
+- Page not found (404)                  : Put the folder inside C:\xampp\htdocs
+                                         and use http://localhost/Capstone(Complete)/index.php
+- "Invalid credentials"                  : Check your email and password; make
+                                         sure your account exists in the users table.
+- Styles look broken                     : Make sure styles.css, bootstrap and
+                                         the images/ and avatars/ folders are
+                                         uploaded together with the PHP files.
+
+
+IMPORTANT NOTES
+===============
+- This is a website, not a desktop program. It must be opened through a
+  browser at http://localhost (do not double-click index.php).
+- Always click Logout when you are finished.
+- The database (elearning_db) must be set up before first use.
